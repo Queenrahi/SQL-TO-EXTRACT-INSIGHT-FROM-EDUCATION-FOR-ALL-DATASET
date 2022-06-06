@@ -1,0 +1,56 @@
+
+
+Select sum (donation) as total_donation
+from donation_data;
+
+Select gender, sum (donation) as donation_sum
+from donation_data
+group by gender;
+
+Select gender,sum (donation), count (donation)
+from donation_data
+group by gender;
+
+Select sum (donation), donation_frequency
+from donation_data, donor_data
+group by donation_frequency;
+
+Select sum (donation) as donation_sum, count (donation) as donation_count, job_field
+from donation_data, donor_data
+group by job_field;
+
+select sum(donation), count (donation)
+from donation_data 
+where donation >200;
+
+select sum(donation), count (donation)
+from donation_data 
+where donation <200;
+
+select state, max (donation) as Max_donation
+from donation_data 
+group by state
+limit 10;
+
+select state, min (donation) as Min_donation
+from donation_data 
+group by state
+limit 10;
+
+Select car, max (donation) as Max_donor
+from donor_data, donation_data
+group by car
+limit 10;
+
+
+----CONSIDERED QUERIES 
+-----Join
+-----Order by
+-----Where
+-----Between
+-----Or
+-----SUM()
+-----COUNT()
+-----AVG()
+-----Group by
+-----Having
